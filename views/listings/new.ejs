@@ -1,0 +1,85 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+
+    <h3>Create New Listing</h3>
+
+    <!-- IMPORTANT: form must submit properly -->
+    <form method="POST" action="/listings" enctype="multipart/form-data">
+
+      <!-- TITLE -->
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input
+          name="listing[title]"
+          type="text"
+          class="form-control"
+          required
+        >
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          class="form-control"
+          required
+        ></textarea>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="mb-3">
+        <label class="form-label">Upload Image</label>
+        <input
+          name="image"
+          type="file"
+          class="form-control"
+          required
+        >
+      </div>
+
+      <!-- PRICE -->
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input
+          name="listing[price]"
+          type="number"
+          class="form-control"
+          min="0"
+          required
+        >
+      </div>
+
+      <!-- LOCATION -->
+      <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input
+          name="listing[location]"
+          type="text"
+          class="form-control"
+          required
+        >
+      </div>
+
+      <!-- COUNTRY -->
+      <div class="mb-3">
+        <label class="form-label">Country</label>
+        <input
+          name="listing[country]"
+          type="text"
+          class="form-control"
+          required
+        >
+      </div>
+
+      <!-- SUBMIT BUTTON (IMPORTANT) -->
+      <button type="submit" class="btn btn-dark mt-3">
+        Create Listing
+      </button>
+
+    </form>
+
+  </div>
+</div>
