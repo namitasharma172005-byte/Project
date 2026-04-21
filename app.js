@@ -106,3 +106,10 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
     console.log("server is listening on port 8080");
 });
+import path from "path";
+
+app.use(express.static("client/build"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve("client/build/index.html"));
+});
